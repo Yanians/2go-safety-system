@@ -17,6 +17,7 @@ import {
 } from "@mui/icons-material";
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -66,6 +67,12 @@ export default function SideBar(){
             <Box className="menu-item">
               <People />
               <span>Employees</span>
+            </Box>
+
+
+            <Box className="menu-item">
+              <DirectionsWalkIcon />
+              <span>Walkthrough</span>
             </Box>
 
             <Box className="menu-item">
