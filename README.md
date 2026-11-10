@@ -14,3 +14,19 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+# ON THE FIRST PUSH TO REPOSITORY
+
+1. git init
+2. git add .
+3. git commit -m "first time prject"
+4. git branch -M main
+5. git remote add origin link/of/the/repository.git
+6. git push -u origin main
+
+   # ON THE THE NEXT UPDATE
+1. git status
+2. git add .
+3. git commit -m "first commit"
+4. git push origin main
