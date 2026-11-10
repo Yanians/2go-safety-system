@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import { Card, CardMedia,} from "@mui/material";
 import { Routes, Route,useNavigate } from "react-router-dom"
 
+import FontComparison from "./FontComparison";
 
 const images = [
   { id:1, src: "/dashboard/Picture1.png"},
@@ -50,6 +51,7 @@ export default function MainContent(){
               </Grid>
             ))}
           </Grid>
+          <FontComparison />
         </Box>
 	)
 }

@@ -84,12 +84,12 @@ body {
   gap: 12px;
   min-width: 0;
 }
-
+/*
 .search-box {
   width: 230px;
   background: #ffffff;
   border-radius: 8px;
-}
+}*/
 
 .profile-section {
   display: flex;
@@ -200,6 +200,7 @@ body {
   }
 
   .header-logo {
+    font-family: "Akzidenz-Grotesk";
     font-size: 26px !important;
   }
 
@@ -263,4 +264,18 @@ body {
   .main-content {
     padding: 18px;
   }
+}
+
+@font-face {
+  font-family: "Goride Sans";
+  src: url("/fonts/Goride Sans.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.logo-2go {
+  font-family: "Goride Sans", sans-serif !important;
+   color: #c90058;
+  font-weight: 900 !important;
 }

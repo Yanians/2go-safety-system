@@ -1,9 +1,24 @@
+
 import React from "react";
 
-import { AppBar, Divider, Avatar,Toolbar, IconButton, InputAdornment,Menu, Box, Typography,TextField,MenuItem, } from "@mui/material";
+import { 
+  AppBar,
+  Divider, 
+  Avatar,
+  Toolbar, 
+  IconButton, 
+  InputAdornment,
+  Menu, 
+  Box, 
+  Stack,
+  Typography,
+  TextField,
+  MenuItem, 
+} from "@mui/material";
+
+import SearchIcon from '@mui/icons-material/Search';
 
 import {
-  Search,
   NotificationsNone,
   Dashboard,
   Settings,
@@ -11,13 +26,11 @@ import {
 } from "@mui/icons-material";
 
 
-
-
 export default function AppBars(){
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-   const handleProfileClick = (event) => {
+  const handleProfileClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -27,26 +40,33 @@ export default function AppBars(){
 
   return (
      <AppBar position="sticky" className="app-header" elevation={1}>
-
         <Toolbar className="app-toolbar">
           {/* LEFT HEADER BRANDING */}
           <Box className="header-brand">
-            <Typography variant="h4" className="header-logo">
-              2GO
-            </Typography>
+              <Stack direction="column" spacing={-2}>
+                <Typography variant="h4" className="logo-2go" sx={{ fontFamily: '"Akzidenz-Grotesk"',}}>
+                  2GO
+                </Typography>
+                <Typography variant="caption" noWrap sx={{color:"#c90058",fontWeight:750}}>
+                  Group inc
+                </Typography>
+              </Stack>
 
             <Box className="header-title">
-              <Typography variant="h6" fontWeight="bold">
+              <Typography sx={{fontFamily: '"Roboto", "Helvetica Neue", Arial, sans-serif',
+                             fontWeight: 900,
+                             }} variant="body1">
                 EHS Dashboard
               </Typography>
 
               <Typography
                 variant="body2"
                 sx={{
-                  color: "#777777",
+                  color: "#c90058",
                   fontSize: "13px",
-                  fontWeight: 500,
+                  fontWeight: 900,
                 }}
+                noWrap
               >
                 Commit. Care. Go Safe
               </Typography>
@@ -56,14 +76,23 @@ export default function AppBars(){
           {/* RIGHT HEADER CONTROLS */}
           <Box className="topbar-right">
 
-            <TextField
+            <TextField sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "40px",
+                    paddingLeft: "5px",
+                  },
+
+                  "& .MuiOutlinedInput-input": {
+                    padding: "8px 10px",
+                  },
+            }}
               size="small"
               placeholder="Search..."
               className="search-box"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <Search />
+                    <SearchIcon sx={{ color: "#757575 !important", fontSize: "22px",}} />
                   </InputAdornment>
                 ),
               }}
