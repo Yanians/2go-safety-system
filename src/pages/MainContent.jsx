@@ -17,7 +17,7 @@ export default function MainContent(){
  const navigate = useNavigate();
 	return (
         <Box component="main" className="main-content">
-          <Grid container spacing={3}>
+          <Grid container spacing={4}>
             {images.map((image, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card onClick={() => navigate(`/${image.id}`)}
