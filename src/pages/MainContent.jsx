@@ -1,9 +1,8 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import { Card, CardMedia,} from "@mui/material";
+import { Card, CardMedia, Divider,Stack,} from "@mui/material";
 import { Routes, Route,useNavigate } from "react-router-dom"
-
-import FontComparison from "./FontComparison";
+import BannerTraining from "./BannerTraining";
 
 const images = [
   { id:1, src: "/dashboard/Picture1.png"},
@@ -17,6 +16,9 @@ const images = [
 export default function MainContent(){
  const navigate = useNavigate();
 	return (
+    <>
+    <Stack direction="column" spacing="2" sx={{m:2}}>
+       <BannerTraining />
         <Box component="main" className="main-content">
           <Grid container spacing={4}>
             {images.map((image, index) => (
@@ -51,7 +53,8 @@ export default function MainContent(){
               </Grid>
             ))}
           </Grid>
-          <FontComparison />
         </Box>
+          </Stack>
+        </>
 	)
 }
