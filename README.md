@@ -20,7 +20,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 1. git init
 2. git add .
-3. git commit -n "first time prject"
+3. git commit -m "first time prject"
 4. git branch -M main
 5. git remote add origin link/of/the/repository.git
 6. git push -u origin main
