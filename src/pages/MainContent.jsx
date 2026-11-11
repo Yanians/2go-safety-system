@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Card, CardMedia, Divider,Stack,} from "@mui/material";
 import { Routes, Route,useNavigate } from "react-router-dom"
-import BannerTraining from "./BannerTraining";
+import DashboardBanner from "./DashboardBanner";
 
 const images = [
   { id:1, src: "/dashboard/Picture1.png"},
@@ -18,7 +18,7 @@ export default function MainContent(){
 	return (
     <>
     <Stack direction="column" spacing="2" sx={{m:2}}>
-       <BannerTraining />
+       <DashboardBanner />
         <Box component="main" className="main-content">
           <Grid container spacing={4}>
             {images.map((image, index) => (
