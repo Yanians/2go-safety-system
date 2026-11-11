@@ -30,11 +30,11 @@ export default function BannerTraining() {
             rgba(255,255,255,0.05) 50px
           ),
           linear-gradient(
-            -104deg,
-            rgba(201, 0, 88, 0.55) 0%,
-            rgba(201, 0, 88, 0.70) 35%,
-            rgba(201, 0, 88, 0.85) 70%,
-            rgba(201, 0, 88, 1) 100%
+            -170deg,
+            rgba(248, 0, 99, 0.55) 0%,
+            rgba(231, 10, 99, 0.70) 25%,
+            rgba(4, 229, 0, 0.70) 45%,
+            rgba(248, 45, 99, 1) 100%
           )
         `,
 
@@ -94,7 +94,7 @@ export default function BannerTraining() {
           {/* CAPTION */}
           <Typography
             noWrap
-            variant="caption"
+            variant="subtitle1"
             sx={{
               display: "block",
               fontSize: {
