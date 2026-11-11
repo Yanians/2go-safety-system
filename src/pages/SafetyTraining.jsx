@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Card, CardMedia,} from "@mui/material";
 import { Routes, Route,useNavigate } from "react-router-dom"
-
+import BannerTraining from '../banner/BannerTraining';
 
 const images = [
   { id:1, src: "/safety-training/menu1.png"},
@@ -17,8 +17,28 @@ export default function SafetyTraining(){
   
  const navigate = useNavigate();
   return (
-        <Box component="main" className="main-content">
-          <Grid container spacing={3}>
+    <>
+      <Box 
+       sx={{
+    display: "flex",
+    mt:4,
+    flexDirection: "column",
+    alignItems: "center",
+    // justifyContent: "space-between",
+    width: "auto",
+    mx: {
+      xs: 1.5,  // Mobile
+      sm: 2,    // Tablet
+      md: 3,    // Desktop
+      lg: 3,    // Large screens
+    },
+    gap: 2,
+    minWidth: 0,
+  }}
+    >
+         <BannerTraining />
+          <Box component="main" className="main-content">
+          <Grid container spacing={2}>
             {images.map((image, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card onClick={() => navigate(`/${image.id}`)}
@@ -52,5 +72,8 @@ export default function SafetyTraining(){
             ))}
           </Grid>
         </Box>
+  </Box>       
+       
+        </>
   )
 }
