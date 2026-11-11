@@ -1,77 +1,118 @@
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import { Card, CardMedia, Divider,Stack,} from "@mui/material";
-import { Routes, Route,useNavigate } from "react-router-dom"
+
+import React from "react";
+
+import {
+  Box,
+  Card,
+  CardMedia,
+} from "@mui/material";
+
+import { useNavigate } from "react-router-dom";
+
 import DashboardBanner from "../banner/DashboardBanner";
 
 const images = [
-  { id:1, src: "/dashboard/Picture1.png"},
-  { id: 2, src: "/dashboard/Picture2.png"},
-  { id:3, src: "/dashboard/Picture3.png"},
-  { id:4, src: "/dashboard/Picture4.png"},
-  { id:5, src: "/dashboard/Picture5.png"},
-  { id:6, src: "/dashboard/Picture6.png"},
+  { id: 1, src: "/dashboard/Picture1.png" },
+  { id: 2, src: "/dashboard/Picture2.png" },
+  { id: 3, src: "/dashboard/Picture3.png" },
+  { id: 4, src: "/dashboard/Picture4.png" },
+  { id: 5, src: "/dashboard/Picture5.png" },
+  { id: 6, src: "/dashboard/Picture6.png" },
 ];
 
-export default function MainContent(){
- const navigate = useNavigate();
-	return (
-    <>
-    <Box 
-       sx={{
-    display: "flex",
-    mt:4,
-    flexDirection: "column",
-    alignItems: "center",
-    // justifyContent: "space-between",
-    width: "auto",
-    mx: {
-      xs: 1.5,  // Mobile
-      sm: 2,    // Tablet
-      md: 3,    // Desktop
-      lg: 3,    // Large screens
-    },
-    gap: 2,
-    minWidth: 0,
-  }}
-    >
-       <DashboardBanner />
-        <Box component="main" className="main-content">
-          <Grid container spacing={2}>
-            {images.map((image, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card onClick={() => navigate(`/${image.id}`)}
-                  sx={{
-                    borderRadius: 3,
-                    overflow: "hidden",
-                    boxShadow: 3,
-                    height: "100%",
-                     borderRadius: 3,
-                    overflow: "hidden",
-                    cursor: "pointer", // Changes cursor to hand
-                    transition: "0.3s",
+export default function MainContent() {
+  const navigate = useNavigate();
 
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: 6,
-                    },
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={image.src}
-                    alt={image.title}
-                    sx={{
-                      height: 220,
-                      objectFit: "cover",
-                    }}
-                  />
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-          </Box>
-        </>
-	)
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        maxWidth: "100%",
+        minWidth: 0,
+        boxSizing: "border-box",
+        mx: 0,
+        mt: 1,
+        gap: 2,
+      }}
+    >
+      {/* DASHBOARD BANNER */}
+      <DashboardBanner />
+      <Box
+        sx={{
+          width: "100%",
+          minWidth: 0,
+          overflow: "hidden",
+        }}
+      >
+      </Box>
+         
+      {/* DASHBOARD IMAGE CARDS */}
+
+      <Box
+        component="main"
+        className="main-content"
+        sx={{
+          display: "grid",
+          width: "100%",
+          minWidth: 0,
+          gridTemplateColumns: {
+            // xs: "minmax(0, 1fr)",
+            xs:"repeat(2, minmax(0, 1fr))",
+            sm: "repeat(2, minmax(0, 1fr))",
+            md: "repeat(2, minmax(0, 1fr))",
+            lg: "repeat(3, minmax(0, 1fr))",
+          },
+          gap: {
+            xs: 1.5,
+            sm: 2,
+            md: 2.5,
+          },
+          boxSizing: "border-box",
+        }}
+      >
+
+        {images.map((image) => (
+          <Card
+            key={image.id}
+            onClick={() => navigate(`/pages/${image.id}`)}
+            sx={{
+              width: "100%",
+                minWidth: 0,
+                height: "fit-content",
+                display: "flex",
+                flexDirection: "column",
+                alignSelf: "start",
+                borderRadius: 3,
+                overflow: "hidden",
+                boxShadow: 3,
+                cursor: "pointer",
+                transition: "0.3s ease",
+
+              "&:hover": {
+                transform: {
+                  xs: "none",
+                  sm: "translateY(-5px)",
+                },
+                boxShadow: 6,
+              },
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={image.src}
+              alt={`Dashboard image ${image.id}`}
+              sx={{
+                display: "block",
+                width: "100%",
+                aspectRatio: "16 / 9",
+                objectFit: "contain",
+              }}
+            />
+          </Card>
+        ))}
+      </Box>
+    </Box>
+  );
 }

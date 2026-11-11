@@ -61,32 +61,48 @@ const categories = [
   },
 ];
 
+
 function App() {
- 
   return (
-    <Box className="app-layout">
+    <>
+     <Box className="app-layout">
 
-      {/* STICKY FULL-WIDTH APP BAR */}
-         <AppBars />
-     
+  <AppBars />
+ 
+  <Box className="content-layout">
+<SideBars />
+   
 
+    <Box
+  component="main"
+  sx={{
+    display: "block",
+    flex: "1 1 0%",
+    width: "auto",
+    minWidth: 0,
+    maxWidth: "100%",
+    boxSizing: "border-box",
+    overflowX: "hidden",
+    p: {
+      xs: 1,
+      sm: 2,
+      md: 3,
+    },
+  }}
+>
+      <Routes>
+        <Route path="/" element={<MainContent />} />
+        <Route path="/safety-training" element={<SafetyTraining />} />
+        <Route path="/pages/:id" element={<ImageDetails />} />
+      </Routes>
+    </Box>
 
-      {/* SIDEBAR AND MAIN CONTENT */}
-      
-       <Box className="content-layout">
-         
-        {/* SIDEBAR */}
-           <SideBars />
+  </Box>
 
-            {/* MAIN CONTENT */}
-              <Routes>
-                <Route path="/" element={<MainContent />} />
-                <Route path="/:id" element={<SafetyTraining />} />
-                <Route path="/:id" element={<ImageDetails />} />
-              </Routes>
-       </Box>
-      </Box>
+</Box>
+</>
   );
 }
+
 
 export default App;

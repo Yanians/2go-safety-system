@@ -19,59 +19,79 @@ export default function SafetyTraining(){
   return (
     <>
       <Box 
-       sx={{
-    display: "flex",
-    mt:4,
-    flexDirection: "column",
-    alignItems: "center",
-    // justifyContent: "space-between",
-    width: "auto",
-    mx: {
-      xs: 1.5,  // Mobile
-      sm: 2,    // Tablet
-      md: 3,    // Desktop
-      lg: 3,    // Large screens
-    },
-    gap: 2,
-    minWidth: 0,
-  }}
-    >
+         component="main"
+        className="main-content"
+           sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                width: "auto",
+                mx: 0,
+                mt: 1,
+                gap: 2,
+            }}
+      >
          <BannerTraining />
-          <Box component="main" className="main-content">
-          <Grid container spacing={2}>
-            {images.map((image, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card onClick={() => navigate(`/${image.id}`)}
-                  sx={{
-                    borderRadius: 3,
-                    overflow: "hidden",
-                    boxShadow: 3,
-                    height: "100%",
-                     borderRadius: 3,
-                    overflow: "hidden",
-                    cursor: "pointer", // Changes cursor to hand
-                    transition: "0.3s",
+         <Box
+  sx={{
+    display: "grid",
+    width: "100%",
+    minWidth: 0,
+    gridTemplateColumns: {
+      // xs: "minmax(0, 1fr)",
+       xs: "repeat(2, minmax(0, 1fr))",
+      sm: "repeat(2, minmax(0, 1fr))",
+      md: "repeat(2, minmax(0, 1fr))",
+      lg: "repeat(3, minmax(0, 1fr))",
+    },
+    gap: {
+            xs: 1.5,
+            sm: 2,
+            md: 2.5,
+          },
+  }}
+>
+  {images.map((image) => (
+    <Card
+      key={image.id}
+      onClick={() => navigate(`/pages/${image.id}`)}
+     sx={{
+              width: "100%",
+                minWidth: 0,
+                height: "fit-content",
+                display: "flex",
+                flexDirection: "column",
+                alignSelf: "start",
+                borderRadius: 3,
+                overflow: "hidden",
+                boxShadow: 3,
+                cursor: "pointer",
+                transition: "0.3s ease",
 
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: 6,
-                    },
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={image.src}
-                    alt={image.title}
-                    sx={{
-                      height: 220,
-                      objectFit: "cover",
-                    }}
-                  />
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+              "&:hover": {
+                transform: {
+                  xs: "none",
+                  sm: "translateY(-5px)",
+                },
+                boxShadow: 6,
+              },
+            }}
+    >
+      <CardMedia
+        component="img"
+        src={image.src}
+        alt={`Training image ${image.id}`}
+        loading="lazy"
+        sx={{
+          display: "block",
+          width: "100%",
+          aspectRatio: "16 / 9",
+          objectFit: "contain",
+        }}
+      />
+    </Card>
+  ))}
+</Box>
   </Box>       
        
         </>
