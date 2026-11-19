@@ -18,6 +18,11 @@ const images = [
   { id: 4, src: "/dashboard/Picture4.png" },
   { id: 5, src: "/dashboard/Picture5.png" },
   { id: 6, src: "/dashboard/Picture6.png" },
+
+  { id: 7, src: "/dashboard/Picture3.png" },
+  { id: 8, src: "/dashboard/Picture4.png" },
+  { id: 9, src: "/dashboard/Picture5.png" },
+  { id: 10, src: "/dashboard/Picture6.png" },
 ];
 
 export default function MainContent() {

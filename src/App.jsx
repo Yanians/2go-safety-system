@@ -10,99 +10,94 @@ import MainContent from "./pages/MainContent";
 import ImageDetails from "./pages/ImageLink";
 import SideBars from './pages/SideBar';
 import SafetyTraining from './pages/SafetyTraining';
+import Dashboard from "./pages/Dashboard";
 import AppBars from './pages/AppBars';
 import "./App.css";
 
-const images = [
-  { id:1, src: "/dashboard/Picture1.png"},
-  { id: 2, src: "/dashboard/Picture2.png"},
-  { id:3, src: "/dashboard/Picture3.png"},
-  { id:4, src: "/dashboard/Picture4.png"},
-  { id:5, src: "/dashboard/Picture5.png"},
-  { id:6, src: "/dashboard/Picture6.png"},
-];
+// const images = [
+//   { id:1, src: "/dashboard/Picture1.png"},
+//   { id: 2, src: "/dashboard/Picture2.png"},
+//   { id:3, src: "/dashboard/Picture3.png"},
+//   { id:4, src: "/dashboard/Picture4.png"},
+//   { id:5, src: "/dashboard/Picture5.png"},
+//   { id:6, src: "/dashboard/Picture6.png"},
+// ];
 
-const categories = [
-  {
-    title: "Safety Orientation",
-    description: "Learn essential workplace safety procedures.",
-    icon: <Security />,
-    color: "#e8f0ff",
-  },
-  {
-    title: "Fire Safety",
-    description: "Fire prevention and emergency response.",
-    icon: <HealthAndSafety />,
-    color: "#ffe9e9",
-  },
-  {
-    title: "Container Yard Safety",
-    description: "Safe practices in container yard operations.",
-    icon: <LocalShipping />,
-    color: "#fff1df",
-  },
-  {
-    title: "Training Materials",
-    description: "Access learning materials and resources.",
-    icon: <MenuBook />,
-    color: "#e9f8ef",
-  },
-  {
-    title: "Employee Training",
-    description: "Monitor employee training participation.",
-    icon: <People />,
-    color: "#f1eaff",
-  },
-  {
-    title: "Certificates",
-    description: "View completed training certificates.",
-    icon: <WorkspacePremium />,
-    color: "#fff7d9",
-  },
-];
+// const categories = [
+//   {
+//     title: "Safety Orientation",
+//     description: "Learn essential workplace safety procedures.",
+//     icon: <Security />,
+//     color: "#e8f0ff",
+//   },
+//   {
+//     title: "Fire Safety",
+//     description: "Fire prevention and emergency response.",
+//     icon: <HealthAndSafety />,
+//     color: "#ffe9e9",
+//   },
+//   {
+//     title: "Container Yard Safety",
+//     description: "Safe practices in container yard operations.",
+//     icon: <LocalShipping />,
+//     color: "#fff1df",
+//   },
+//   {
+//     title: "Training Materials",
+//     description: "Access learning materials and resources.",
+//     icon: <MenuBook />,
+//     color: "#e9f8ef",
+//   },
+//   {
+//     title: "Employee Training",
+//     description: "Monitor employee training participation.",
+//     icon: <People />,
+//     color: "#f1eaff",
+//   },
+//   {
+//     title: "Certificates",
+//     description: "View completed training certificates.",
+//     icon: <WorkspacePremium />,
+//     color: "#fff7d9",
+//   },
+// ];
 
 
 function App() {
   return (
     <>
      <Box className="app-layout">
-
-  <AppBars />
- 
-  <Box className="content-layout">
-<SideBars />
-   
-
-    <Box
-  component="main"
-  sx={{
-    display: "block",
-    flex: "1 1 0%",
-    width: "auto",
-    minWidth: 0,
-    maxWidth: "100%",
-    boxSizing: "border-box",
-    overflowX: "hidden",
-    p: {
-      xs: 1,
-      sm: 2,
-      md: 3,
-    },
-  }}
->
-      <Routes>
-        <Route path="/" element={<MainContent />} />
-        <Route path="/safety-training" element={<SafetyTraining />} />
-        <Route path="/pages/:id" element={<ImageDetails />} />
-      </Routes>
+        <AppBars />
+       <Box className="content-layout">
+          <SideBars />
+         <Box
+            component="main"
+            sx={{
+              display: "block",
+              flex: "1 1 0%",
+              width: "auto",
+              minWidth: 0,
+              maxWidth: "100%",
+              boxSizing: "border-box",
+              overflowX: "hidden",
+              p: {
+                xs: 1,
+                sm: 2,
+                md: 3,
+              },
+            }}
+          >
+            <Routes>
+              <Route path="/" element={<MainContent />} />
+              <Route path="/Dashboard" element={<Dashboard />} />
+              <Route path="/safety-training" element={<SafetyTraining />} />
+              <Route path="/pages/:id" element={<ImageDetails />} />
+            </Routes>
+          </Box>
+     </Box>
     </Box>
-
-  </Box>
-
-</Box>
 </>
   );
 }
-
 
 export default App;
