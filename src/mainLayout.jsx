@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-import Sidebars from "./pages/Sidebar";
+import Sidebars from "./pages/SideBar";
 import AppBarHeader from "./pages/AppBars";
 import MainContent from "./pages/MainContent";
 import "./App.css";
@@ -20,9 +20,7 @@ export default function DashboardLayout() {
         alignItems: "stretch",
       }}
     >
-
         <Sidebars />
-      {/*</Box>*/}
 
       {/* MAIN CONTAINER - 8/12 */}
       <Box className="main-layout"
